@@ -1,0 +1,22 @@
+.btn {
+	display: inline-block;
+  	.ie7-inline-block();
+	background: @buttonStandardColor;
+	color: @buttonStandardText;	
+	padding: @baseLineHeight/2;
+	margin: @baseLineHeight 0;
+	cursor: pointer;
+	&:hover {
+		color: @buttonStandardText;
+		text-decoration: underline;		
+	}
+}
+
+.btn.block {
+	display: block;
+}
+
+.btn.primary {
+	background: @buttonPrimaryColor;
+	color: @buttonPrimaryText;
+}

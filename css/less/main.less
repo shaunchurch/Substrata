@@ -1,0 +1,107 @@
+/* main.less */
+
+/* normalize browsers */
+@import "normalize.less"; 
+
+/* essentials */
+@import "variables.less";
+@import "mixins.less";
+
+/* typography */
+@import "typography.less";
+
+/* buttons */
+@import "buttons.less";
+
+/* page defaults, styling */
+@import "base.less";
+
+/* semntic grid */
+@import "grid.less";
+/* grid settings */
+@gutter-width: 20;
+@total-width: 100%; // comment this for fixed width 
+@vertical-space: 22px;
+
+/* small utility classes/mixins */
+@import "utilities.less";
+
+/* Default styling */
+
+/* --------- EXAMPLE LAYOUT ---------- */
+body { 
+	border-top: @baseLineHeight/2 solid @grayDarker;
+}
+/* Main page structure */
+header { 
+	.column(12); 
+	.text-center;
+	margin-top: @baseLineHeight*2;
+	margin-bottom: @baseLineHeight*2;
+}
+
+section.content {
+	.column(9);
+	
+	.features { 
+		.row(9);	
+		.feature {
+			.column(3,9);			
+		}
+	}		
+}
+
+aside.sidebar { 
+	.column(3);	
+}
+
+footer { .column(12); border-top: 1px solid @grayLighter; padding-top: @baseLineHeight; }
+
+
+/* Responsive Break Points */
+/* ----------------------- */
+
+
+/* Responsive: Large desktop and up */
+@media (min-width: 1200px) {
+
+}
+
+/* Tablet to desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Landscape phone to desktop/tablet */
+@media (max-width: 767px) {
+	body { width: 92%; margin: 0 4%; }
+	section.content { 
+		.column(12);
+		.features {
+			.row(12);
+			.feature {
+				.column(4,12);
+			}
+		}
+	 }
+
+	aside.sidebar { .column(12); }
+}
+
+/* Up to Landscape phone */
+@media (max-width: 480px) {
+	section.content { 		
+		.features {			
+			.feature {
+				.column(12,12);
+			}
+		}
+	 }
+	
+}
+
+/* ----- END EXAMPLE LAYOUT --> */
+
+
+/* Debug */
+/*div, section, header, footer, aside { border: 1px solid red; }*/
