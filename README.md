@@ -9,7 +9,8 @@ An attempt to create a bare-bones frontend foundation upon which new projects ca
 
 I want to:
 
-	$ git clone https://github.com/shaunch/Substrata.git
+	$ git clone https://github.com/shaunch/Substrata.git my-new-project
+	$ cd my-new-project
 	$ npm install
 	$ bower install
 	$ subl .
