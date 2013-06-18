@@ -11,3 +11,7 @@ Thumbs.db
 
 # Zip files
 *.zip
+
+# third party libraries
+node_modules
+components
