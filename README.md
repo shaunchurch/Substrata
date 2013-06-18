@@ -3,10 +3,18 @@
 
 A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate.
 
-
 ## What is it?
 
 An attempt to create a bare-bones frontend foundation upon which new projects can quickly and easily be built.
+
+I want to:
+
+	$ git clone https://github.com/shaunch/Substrata.git
+	$ npm install
+	$ bower install
+	$ subl .
+
+... and begin what's unique to this project.
 
 
 ## What's included?
@@ -15,10 +23,11 @@ It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerpl
 
 
 ## What's not?
-Any pre-defined UI or designed components, beyond very basic default typography, spacing and action buttons.
+Pre-defined styles, beyond very basic defaults.
 
 
-## Try it now
-
-* [Visit the example website](http://shaunchurch.com/substrata).
-* [Download v0.1](http://shaunchurch.com/substrata/download/substrata-v0.1.zip)
+## What's next?
+- gruntfile for watch / server / build (less compile, minification, livereload)
+- bower.json instead of including vendor files
+- package.json to install grunt requirements
+- basic transition mixins

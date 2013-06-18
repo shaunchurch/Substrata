@@ -1,4 +1,3 @@
-/* main.less */
 /* normalize browsers */
 /*! normalize.css v1.0.2 | MIT License | git.io/normalize */
 /* ==========================================================================
@@ -446,6 +445,8 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+/* Get our default style variables */
+/* Get our  user over-ridden style variables */
 /* essentials */
 .clearfix {
   *zoom: 1;
@@ -684,30 +685,6 @@ address {
   font-style: normal;
   line-height: 20px;
 }
-/* buttons */
-.btn {
-  display: inline-block;
-  *display: inline;
-  /* IE7 inline-block hack */
-
-  *zoom: 1;
-  background: #eeeeee;
-  color: #222222;
-  padding: 10px;
-  margin: 20px 0;
-  cursor: pointer;
-}
-.btn:hover {
-  color: #222222;
-  text-decoration: underline;
-}
-.btn.block {
-  display: block;
-}
-.btn.primary {
-  background: #46a546;
-  color: #ffffff;
-}
 /* page defaults, styling */
 body {
   margin: 0;
@@ -790,7 +767,6 @@ body:after {
 .affix {
   position: fixed;
 }
-/* Default styling */
 /* --------- EXAMPLE LAYOUT ---------- */
 body {
   border-top: 10px solid #222222;

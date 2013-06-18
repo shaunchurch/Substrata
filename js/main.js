@@ -11,6 +11,6 @@ function Substrata() {
         this.setupWindow();
     },
     this.setupWindow = function() {
-          
+
     };
 }

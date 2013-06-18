@@ -1,0 +1,29 @@
+// Substrata
+
+/* normalize browsers */
+@import "normalize.less"; 
+
+/* Get our default style variables */
+@import 'variables.less';
+
+/* Get our  user over-ridden style variables */
+@import '../style-config.less';
+
+/* essentials */
+@import "mixins.less";
+
+/* typography */
+@import "typography.less";
+
+/* page defaults, styling */
+@import "base.less";
+
+/* semntic grid */
+@import "grid.less";
+/* grid settings */
+@gutter-width: 20;
+@total-width: 100%; // comment this for fixed width 
+@vertical-space: 22px;
+
+/* small utility classes/mixins */
+@import "utilities.less";
