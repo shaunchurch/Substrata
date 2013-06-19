@@ -1,66 +1,30 @@
 // pull in Substrata library
 @import 'less/substrata.less';
 
-//  --- Your styles go here ---  //
+/*** [ Example Layout ] ***/
 
-/* --------- EXAMPLE LAYOUT ---------- */
+
+
+
+
+/* ==========================================================[ Base Styles - all viewports ]=== */
+
 body { 
 	border-top: @baseLineHeight/2 solid @grayDarker;
 }
-/* Main page structure */
-header { 
-	.column(12); 
+
+header {
 	.text-center;
 	margin-top: @baseLineHeight*2;
 	margin-bottom: @baseLineHeight*2;
 }
 
-section.content {
-	.column(9);
-	.features { 
-		.row(9);	
-		.feature {
-			.column(3,9);			
-		}
-	}		
+footer {
+	border-top: 1px solid @grayLighter;
+	padding-top: @baseLineHeight; 
 }
 
-aside.sidebar { 
-	.column(3);	
-}
-
-footer { .column(12); border-top: 1px solid @grayLighter; padding-top: @baseLineHeight; }
-
-
-/* Responsive Break Points */
-/* ----------------------- */
-
-
-/* Responsive: Large desktop and up */
-@media (min-width: 1200px) {
-
-}
-
-/* Tablet to desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-
-}
-
-/* Landscape phone to desktop/tablet */
-@media (max-width: 767px) {
-	body { width: 92%; margin: 0 4%; }
-	section.content { 
-		.column(12);
-		.features {
-			.row(12);
-			.feature {
-				.column(4,12);
-			}
-		}
-	 }
-
-	aside.sidebar { .column(12); }
-}
+/* ==========================================================[ Break Points ]=== */
 
 /* Up to Landscape phone */
 @media (max-width: 480px) {
@@ -74,8 +38,60 @@ footer { .column(12); border-top: 1px solid @grayLighter; padding-top: @baseLine
 	
 }
 
-/* ----- END EXAMPLE LAYOUT --> */
+/* Landscape phone to desktop/tablet */
+@media (min-width: 481px) {
+	body { width: 92%; margin: 0 4%; }
+	section.content { 
+		.column(12);
+		.features {
+			.row(12);
+			.feature {
+				.column(4,12);
+			}
+		}
+	 }
 
+	aside.sidebar { 
+		.column(12);
+	}
+}
+
+/* Tablet to desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Desktop or big toys */
+@media (min-width: 980px) {
+	header { 
+		.column(12); 
+	}
+
+	section.content {
+		.column(9);
+		.features { 
+			.row(9);	
+			.feature {
+				.column(3,9);			
+			}
+		}		
+	}
+
+	aside.sidebar { 
+		.column(3);	
+	}
+
+	footer { 
+		.column(12);
+	}
+}
+
+/* Large desktop and up */
+@media (min-width: 1200px) {
+
+}
+
+/*** [ End Example ] ***/
 
 /* Debug */
 /*div, section, header, footer, aside { border: 1px solid red; }*/
