@@ -2,7 +2,7 @@
   "name": "Substrata",
   "version": "0.0.1",
   "dependencies": {
-    "jquery": "latest"
+    "zepto": "latest"
   },
   "devDependencies": {
     
