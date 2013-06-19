@@ -18,7 +18,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'dist/main.min.js': ['js/*.js']
+          'dist/js/main.min.js': ['src/js/*.js']
         }
       }
     },
@@ -43,15 +43,15 @@ module.exports = function(grunt) {
             compress: true
         },
         files: {
-            'css/main.min.css': [
-                'css/main.less'                    
+            'dist/css/main.min.css': [
+                'src/css/main.less'                    
             ]
         }        
       }
     },
 
     watch: {
-      files: ['css/less/*.less', 'css/main.less'],
+      files: ['src/css/less/*.less', 'src/css/main.less'],
       tasks: ['jshint', 'uglify', 'recess']
     },
 
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-qunit');
+  // grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-recess');
