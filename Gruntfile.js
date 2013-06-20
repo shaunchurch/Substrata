@@ -51,8 +51,11 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      options: {
+        livereload: true
+      },
       files: ['src/css/less/*.less', 'src/css/main.less'],
-      tasks: ['jshint', 'uglify', 'recess']
+      tasks: ['jshint', 'uglify', 'recess']      
     },
     connect: {
       server: {
