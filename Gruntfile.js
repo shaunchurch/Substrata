@@ -54,15 +54,15 @@ module.exports = function(grunt) {
       files: ['src/css/less/*.less', 'src/css/main.less'],
       tasks: ['jshint', 'uglify', 'recess']
     },
-
     connect: {
-     options: {
-        port: 9000,
-        // Change this to '0.0.0.0' to access the server from outside.
-        // hostname: 'localhost'
-        hostname: '0.0.0.0'
+      server: {
+        options: {
+          port: 9001,
+          base: ''
+        }
       }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
