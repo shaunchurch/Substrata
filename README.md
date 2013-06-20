@@ -13,8 +13,9 @@ I want to:
 	$ cd my-new-project
 	$ npm install
 	$ bower install
+	$ subl .	
 	$ grunt server
-	$ subl .
+
 
 ... and begin what's unique to this project.
 

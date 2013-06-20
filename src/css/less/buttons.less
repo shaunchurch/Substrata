@@ -1,14 +1,16 @@
-.btn {
-	display: inline-block;
-  	.ie7-inline-block();
+.btn {	
+	
+	display: inline-block;  	
 	background: @buttonStandardColor;
 	color: @buttonStandardText;	
 	padding: @baseLineHeight/2;
 	margin: @baseLineHeight 0;
 	cursor: pointer;
 	&:hover {
+		background: darken(@buttonPrimaryColor, 10%) !important;
 		color: @buttonStandardText;
-		text-decoration: underline;		
+		text-decoration: none;
+		
 	}
 }
 

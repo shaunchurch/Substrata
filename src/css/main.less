@@ -5,8 +5,9 @@
 
 /* ==========================================================[ Base Styles - all viewports ]=== */
 
-body { 
+body {
 	border-top: @baseLineHeight/2 solid @grayDarker;
+	margin: 0; padding: 0 2%;
 }
 
 header {
@@ -18,6 +19,10 @@ header {
 footer {
 	border-top: 1px solid @grayLighter;
 	padding-top: @baseLineHeight; 
+}
+
+a {
+	.transition();	
 }
 
 /* ==========================================================[ Break Points ]=== */
@@ -35,7 +40,7 @@ footer {
 
 /* Landscape phone to desktop/tablet */
 @media (min-width: 481px) {
-	body { width: 92%; margin: 0 4%; }
+	
 	section.content { 
 		.column(12);
 		.features {
@@ -58,9 +63,6 @@ footer {
 
 /* Desktop or big toys */
 @media (min-width: 980px) {
-	header { 
-		.column(12); 
-	}
 
 	section.content {
 		.column(9);
