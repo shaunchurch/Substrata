@@ -1,0 +1,8 @@
+extends ../layouts/base
+block content
+  dl
+    each post in posts
+      dt
+        a(href = "/#{post.url}") #{post.title}
+      dd
+        This is some text #{post.content}

@@ -10,7 +10,12 @@
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-recess": "~0.3.3",
-    "grunt-contrib-connect": "~0.3.0"
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-templater": "0.0.4-1",
+    "jade": "~0.31.2",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-pages": "~0.2.2",
+    "grunt-contrib-clean": "~0.4.1"
   },
   "engines": {
     "node": "latest"
