@@ -10,8 +10,17 @@
 .pull-left {
   float: left;
 }
+
+// Text
+
+// Text Poeision
 .text-center {
 	text-align: center;
+}
+
+// Text Effects
+.text-emboss {
+  .text-shadow(1px 1px 1px @white);
 }
 
 // Toggling content
@@ -30,4 +39,16 @@
 // For Affix plugin
 .affix {
   position: fixed;
+}
+
+// reset list defaults
+.list-reset {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;	
+}
+
+.negative-margins(@px) {
+  margin-left: -@px;
+  margin-right: -@px;
 }

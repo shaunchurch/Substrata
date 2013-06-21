@@ -1,21 +1,36 @@
-doctype 5
+!!! 5
 html
   head
-    meta(charset="utf8")
-    meta(name="viewport", content="width=device-width")
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+       
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')    
+    
+    link(rel='stylesheet', href='/css/main.min.css')
     
     block title
       title= "Substrata"
   body
     block header
-      ul
-        li
-          a(href="/") Home
-        li
-          a(href="/about.html") About
-        li
-          a(href="/blog.html") Blog
+      nav#primary
+        ul
+          li
+            a(href="/") Home
+          li
+            a(href="/about.html") About
+          li
+            a(href="/blog.html") Blog
 
     block content
     block footer
-      include ../partials/latest-posts
+      footer        
+        p
+          small
+            | Cobbled together by 
+            a(href='http://shaunchurch.com') @shaunchurch
+            | . Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
+
+    script(src='components/zepto/zepto.min.js')
+    script(src='/js/main.min.js')
+    script(src='components/zepto/zepto.min.js')

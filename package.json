@@ -15,7 +15,9 @@
     "jade": "~0.31.2",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-pages": "~0.2.2",
-    "grunt-contrib-clean": "~0.4.1"
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-open": "~0.2.0"
   },
   "engines": {
     "node": "latest"

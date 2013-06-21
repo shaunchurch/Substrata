@@ -3,12 +3,12 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     
     uglify: {
-       options: {
+      options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      dist: {
+      },   
+      build: {
         files: {
-          'dist/js/main.min.js': ['dist/js/main.js']
+          'dist/js/main.min.js': ['src/js/main.js']
         }
       }
     },
@@ -26,8 +26,8 @@ module.exports = function(grunt) {
       }
     },
 
-    recess: {   
-      dist: {     
+    recess: {     
+      build: {     
         options: {
             compile: true,
             compress: true
@@ -40,28 +40,44 @@ module.exports = function(grunt) {
       }
     },
 
-    coffee: {
-      compile: {
-        files: {
-          // 'path/to/result.js': 'path/to/source.coffee', // 1:1 compile
-          'dist/js/main.js': ['src/js/*.coffee', 'src/js/**/*.coffee']
+    coffee: {     
+      build: {
+        compile: {
+          files: {
+            // 'path/to/result.js': 'path/to/source.coffee', // 1:1 compile
+            'dist/js/main.js': ['src/js/*.coffee', 'src/js/**/*.coffee']
+          }
         }
       }
     },
 
-    pages: {     
+    pages: {
       options: {
         pageSrc: 'src/views/pages'
-      },
+      },        
       posts: {
-        src: 'src/views/posts',
-        dest: 'dist',
-        layout: 'src/views/layouts/post.jade',
-        url: 'post/:title' 
-      }     
+        
+          src: 'src/views/posts',
+          dest: 'dist',
+          layout: 'src/views/layouts/post.jade',
+          url: 'post/:title'        
+      }
     },
 
-    clean: ["dist"],
+    clean: { 
+        dev: ['dev'],
+        build: ['dist'],
+        pages: ['dist/*.html'],
+        posts: ['dist/posts/*.html']
+    },
+
+    copy: {
+      main: {
+        files: [          
+          {expand: true, src: ['src/images/*'], dest: 'dist/images/'},          
+        ]
+      }
+    },
 
     watch: {
       options: {
@@ -69,11 +85,15 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['src/css/less/*.less', 'src/css/main.less'],
-        tasks: ['jshint', 'uglify', 'recess']   
+        tasks: ['recess']   
+      },
+      js: {
+        files: ['src/js/**/*.js', 'src/js/*.js'],
+        tasks: ['uglify']
       },
       jade: {
          files: ['src/**/**/*.jade', 'src/**/*.jade', 'src/*.jade'],
-         tasks: ['clean', 'pages']
+         tasks: ['clean:pages', 'clean:posts', 'pages']
       },
       coffee: {
         files: ['src/**/*.coffee', 'src/*.coffee'],
@@ -85,10 +105,16 @@ module.exports = function(grunt) {
       },
       posts: {
         files: ['src/views/**/*.md', 'src/views/posts/*.mdown', 'src/posts/*.markdown'],
-        tasks: ['pages']
+        tasks: ['clean:posts', 'pages']
       }
-
     },
+
+    open : {
+      dev : {
+        path: 'http://127.0.0.1:9001'
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -97,7 +123,7 @@ module.exports = function(grunt) {
         }
       }
     }
-
+    
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -111,11 +137,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-pages');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  // grunt.registerTask('test', ['jshint', 'recess']);
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-open');
 
   grunt.registerTask('default', ['jshint', 'uglify', 'recess']);
-
-  grunt.registerTask('server', ['clean', 'jshint', 'recess', 'coffee:compile', 'pages', 'uglify', 'connect', 'watch']);
-
+  grunt.registerTask('server', ['clean:build', 'jshint', 'recess:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
+  grunt.registerTask('build', ['clean:build', 'jshint', 'recess:build', 'coffee:build', 'pages' ]);
 
 };

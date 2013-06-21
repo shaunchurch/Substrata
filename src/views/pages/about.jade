@@ -1,5 +1,12 @@
 extends ../layouts/base
+
 block title
-      title= "Elephant in the room"
+  title= "About Substrata"
+
 block content
-  h1 This an about page
+  section.content
+    h1 About Substrata
+    p A front-end skeleton project.
+  aside.sidebar
+    include ../partials/try    
+    include ../partials/key-features        

@@ -1,4 +1,40 @@
 extends ../layouts/base
 
-block content
-  h1 This is the index page
+block content  
+  header
+      h1
+        | Hello world! This is Substrata.    
+        h2
+          small
+            | A front-end skeleton project.
+  section.content
+    .features
+        .feature
+          h3 What is it?
+          p
+            | An attempt to create a bare-bones frontend foundation upon which new projects can quickly and easily be built.
+        .feature
+          h3 What's included?
+          p
+            | It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. Also includes jQuery.
+        .feature
+          h3 What's not?
+          p
+            | Any pre-defined UI or designed components, beyond very basic default typography, spacing and action buttons.
+      article
+        h3 Why are you doing this?
+        p
+          | There are some superb tools and frameworks around that help us work faster and smarter. Putting each piece in place to begin a new project can take some time and so far I haven't seen a boilerplate that sets up a blank canvas with everything ready to go.
+        h3 What's the problem?
+        p
+          b
+          | ootstrap is heavy, and contains lots of ready-made components that have to be redesigned. It's often overkill; too much. HTML5 Boilerplate comes with some great page defaults but isn't enough to get you working on what makes this project unique right away. You have to create directories, copy standard files, set up fonts, grab common code snippets, etc.
+        p
+          | I want something that remains lightweight but that is powerful: a grid system that leaves my markup alone, a useful set of essential mixins, a stark template that serves as a blank canvas, the extras I need to support older browsers, and ready to go build tools. I want to clone it, run a few setup commands, and begin work.
+        h3 This is Substrata
+        p
+          | A barebones skeleton for your next web project. A set of Less, JS and HTML starting files that target the sweet spot between too much and too little. A set of configuration files to get you up and running quickly with a reasonably modern workflow. It gets you going, and gets out of the way.
+  aside.sidebar
+    include ../partials/try    
+    include ../partials/key-features    
+    include ../partials/latest-posts

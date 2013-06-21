@@ -6,19 +6,64 @@
 /* ==========================================================[ Base Styles - all viewports ]=== */
 
 body {
-	border-top: @baseLineHeight/2 solid @grayDarker;
+	border-top: @baseLineHeight/2 solid @brand-blue;
 	margin: 0; padding: 0 2%;
 }
 
 header {
-	.text-center;
-	margin-top: @baseLineHeight*2;
+	.negative-margins(2%);
+	.text-center;	
+	padding-top: @baseLineHeight*2;
+	padding-bottom: @baseLineHeight*2;
+	// background: url('../images/src/images/windowblur.jpg') center 800px;
+	background: @brand-blue;
 	margin-bottom: @baseLineHeight*2;
+	h1 {
+		color: @white;
+	}
+
+}
+
+nav#primary {
+	ul {
+		.list-reset;
+		.clearfix;
+		li {
+			float: left;
+			margin: 0 @baseLineHeight/2;
+			a {
+				.transition();
+				display: block;				
+				padding: @baseLineHeight/2 @baseLineHeight/2;
+				font-weight: bold;
+				&:hover {
+					background: @grayLighter;
+					color: @brand-blue;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.latest-posts {
+	.list-reset;
+	li {
+		border-bottom: 1px solid @grayLighter;
+		a {
+			display: block;
+			padding: @baseLineHeight/2;
+			&:hover {
+				text-decoration: none;
+				background: @grayLighter;
+			}
+		}
+	}
 }
 
 footer {
 	border-top: 1px solid @grayLighter;
-	padding-top: @baseLineHeight; 
+	padding-top: @baseLineHeight;
 }
 
 a {

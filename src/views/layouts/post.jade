@@ -4,7 +4,10 @@ block title
   title= post.title
 
 block content
-  h1= post.title
-  h4= post.date
-  div!= post.content
+  section.content
+    h1= post.title
+    h4= post.date
+    div!= post.content
+  aside.sidebar
+    include ../partials/latest-posts
     
