@@ -1,11 +1,11 @@
 # Substrata
 =========
 
-A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate.
+A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate and skeleton build and deployment tools. 
 
 ## What is it?
 
-An attempt to create a bare-bones frontend foundation upon which new projects can quickly and easily be built.
+An attempt to create a bare-bones frontend foundation upon which new projects can quickly and easily be built, to remove the barrier of setup from building quick simple websites.
 
 I want to:
 
@@ -16,21 +16,20 @@ I want to:
 	$ subl .	
 	$ grunt server
 
-
 ... and begin what's unique to this project.
 
 
 ## What's included?
 
-It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. Also includes jQuery.
+It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. It then bundles a Gruntfile with some useful tasks to handle livereload, compilation of Jade, Less, CoffeeScript and Markdown, and supports quick static site generation.
 
+It's everything you need to make a quick new site with a ready made workflow.
 
 ## What's not?
 Pre-defined styles, beyond very basic defaults.
 
 
 ## What's next?
-- gruntfile for watch / server / build (less compile, minification, livereload)
-- bower.json instead of including vendor files
-- package.json to install grunt requirements
-- basic transition mixins
+- Deployment setup
+- Add carefully selected base styles?
+- Parsley for in built form validation?
