@@ -1,6 +1,6 @@
 # Substrata
 
-A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate and skeleton build and deployment tools. 
+A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate with skeleton build and deployment tools. 
 
 ## What is it?
 
@@ -20,7 +20,7 @@ I want to:
 
 ## What's included?
 
-It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. It then bundles a Gruntfile with some useful tasks to handle livereload, compilation of Jade, Less, CoffeeScript and Markdown, and supports quick static site generation.
+It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. It then bundles a Gruntfile with some useful tasks to handle livereload, compilation of Jade (layouts and partials), Less, CoffeeScript and Markdown, and supports quick static site generation.
 
 It's everything you need to make a quick new site with a ready made workflow.
 

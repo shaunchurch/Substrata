@@ -4,7 +4,7 @@
 /*** [ Example Layout ] ***/
 
 /* ==========================================================[ Base Styles - all viewports ]=== */
-* { box-sizing: border-box;}
+* { box-sizing: border-box; }
 html {
 	width: 100%;
 	overflow-x: hidden;
@@ -12,19 +12,25 @@ html {
 }
 
 header {
-	position: absolute;
-	left: -20px;
-	width: 104%;
-	.text-center;	
-	.rotate(3deg);
+	.text-center;
+	position: relative;
 	padding-top: @baseLineHeight*7;
 	padding-bottom: @baseLineHeight*3;
 	background: url('../images/src/images/windowblur.jpg') center bottom;
 	margin-top: -@baseLineHeight*5;
 	margin-bottom: @baseLineHeight*2;
+	.transition();
+	width: 104%;
 	h1 {
 		color: @white;
 	}
+	@media(min-width: 768px) {
+		position: absolute;
+		left: -20px;
+		width: 104%;
+		box-sizing: content-box;	
+		.rotate(3deg);		
+	}	
 }
 
 nav#primary {
@@ -55,7 +61,9 @@ nav#primary {
 section.content {
 	padding: 0 @baseLineHeight*2 0 @baseLineHeight*2;
 	&.homepage {
-		margin-top: 225px;
+		@media (min-width: 768px) {
+			margin-top: 225px;
+		}
 	}
 
 }
@@ -90,8 +98,10 @@ aside.sidebar.homepage {
 .install {
 	.clearfix();
 	.commands, .hpfeatures {
-		width: 50%;
-		float: left;
+		.column(12);
+		@media (min-width: 768px) {
+			.column(6);
+		}
 	}	
 }
 
@@ -151,6 +161,7 @@ h2.intro {
 	aside.sidebar {
 		padding: 0 @baseLineHeight*2;
 	}
+
 	footer {
 		margin-top: @baseLineHeight*2;
 		.column(12);
