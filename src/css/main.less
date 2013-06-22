@@ -4,7 +4,9 @@
 /*** [ Example Layout ] ***/
 
 /* ==========================================================[ Base Styles - all viewports ]=== */
+
 * { box-sizing: border-box; }
+
 html {
 	width: 100%;
 	overflow-x: hidden;
@@ -12,19 +14,20 @@ html {
 }
 
 header {
+	.transition();
 	.text-center;
 	position: relative;
 	padding-top: @baseLineHeight*7;
 	padding-bottom: @baseLineHeight*3;
 	background: url('../images/src/images/windowblur.jpg') center bottom;
 	margin-top: -@baseLineHeight*5;
-	margin-bottom: @baseLineHeight*2;
-	.transition();
+	margin-bottom: @baseLineHeight*2;	
 	width: 104%;
 	h1 {
 		color: @white;
 	}
-	@media(min-width: 768px) {
+	
+	@media(@medium) {
 		position: absolute;
 		left: -20px;
 		width: 104%;
@@ -66,14 +69,41 @@ section.content {
 		}
 	}
 
+	@media(@small) {
+		section.content { 		
+			.features {			
+				.feature {
+					.column(12,12);
+				}
+			}
+	 	}
+	}
+
+	@media(@large) {
+		.column(9);
+		.features { 
+			.row(9);	
+			.feature {
+				.column(3,9);			
+			}	
+		}
+	}
 }
 
-aside.sidebar.homepage {	
-	margin-top: 150px;
-	position: relative;
-	z-index: 101;
-	background: @white;
-	padding: @baseLineHeight;
+aside.sidebar {
+	&.homepage {
+		margin-top: 150px;
+		position: relative;
+		z-index: 101;
+		background: @white;
+		padding: @baseLineHeight;
+	}
+	@media(@small) {
+		.column(12);
+	}
+	@media(@large) {
+		.column(3);
+	}
 }
 
 .latest-posts {
@@ -93,6 +123,22 @@ aside.sidebar.homepage {
 
 .section.content {
 	.row();
+	overflow: hidden;
+	
+	@media(@small) {
+		.column(12);
+		.features {
+			.row(12);
+			.feature {
+				.column(4,12);
+			} 
+		}
+	}
+	
+}
+
+div.post {
+	margin-bottom: @baseLineHeight*3;
 }
 
 .install {
@@ -105,95 +151,40 @@ aside.sidebar.homepage {
 	}	
 }
 
-
 footer {
 	border-top: 1px solid @grayLighter;
 	padding-top: @baseLineHeight;
+	
+	@media(@large) {
+		.column(12);
+	}
 }
-
-
 
 /* Typography */
 p, li {
-		color: lighten(@gray,10%);
+	color: lighten(@gray,10%);
 }
+
 a {
 	.transition();	
 }
+
 h2.intro {
 	font-weight: bold;
 	font-size: @baseFontSize*1.5;
 }
 
-/* ==========================================================[ Break Points ]=== */
+// /* Tablet to desktop */
+// @media (min-width: 768px) and (max-width: 979px) {
+// 	aside.sidebar {
+// 		padding: 0 @baseLineHeight*2;
+// 	}
 
-/* Up to Landscape phone */
-@media (max-width: 480px) {
-	section.content { 		
-		.features {			
-			.feature {
-				.column(12,12);
-			}
-		}
-	 }
-}
-
-/* Landscape phone to desktop/tablet */
-@media (min-width: 481px) {
-	
-	section.content { 
-		.column(12);
-		.features {
-			.row(12);
-			.feature {
-				.column(4,12);
-			} 
-		}
-	 }
-
-	aside.sidebar { 
-		.column(12);
-	}
-}
-
-/* Tablet to desktop */
-@media (min-width: 768px) and (max-width: 979px) {
-	aside.sidebar {
-		padding: 0 @baseLineHeight*2;
-	}
-
-	footer {
-		margin-top: @baseLineHeight*2;
-		.column(12);
-	}
-}
-
-/* Desktop or big toys */
-@media (min-width: 980px) {
-
-	section.content {
-		.column(9);
-		.features { 
-			.row(9);	
-			.feature {
-				.column(3,9);			
-			}
-		}		
-	}
-
-	aside.sidebar { 
-		.column(3);	
-	}
-
-	footer { 
-		.column(12);
-	}
-}
-
-/* Large desktop and up */
-@media (min-width: 1200px) {
-
-}
+// 	footer {
+// 		margin-top: @baseLineHeight*2;
+// 		.column(12);
+// 	}
+// }
 
 /*** [ End Example ] ***/
 
