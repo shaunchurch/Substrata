@@ -27,7 +27,7 @@ header {
 		color: @white;
 	}
 	
-	@media(@medium) {
+	@media(@large) {
 		position: absolute;
 		left: -20px;
 		width: 104%;
@@ -62,9 +62,9 @@ nav#primary {
 }
 
 section.content {
-	padding: 0 @baseLineHeight*2 0 @baseLineHeight*2;
+	padding: 0 @baseLineHeight*2 0 @baseLineHeight*2;	
 	&.homepage {
-		@media (min-width: 768px) {
+		@media (@large) {
 			margin-top: 225px;
 		}
 	}
