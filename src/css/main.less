@@ -91,18 +91,19 @@ section.content {
 }
 
 aside.sidebar {
-	&.homepage {
-		margin-top: 150px;
-		position: relative;
-		z-index: 101;
-		background: @white;
-		padding: @baseLineHeight;
-	}
+	
 	@media(@small) {
 		.column(12);
 	}
 	@media(@large) {
 		.column(3);
+		&.homepage {
+			margin-top: 150px;
+			position: relative;
+			z-index: 101;
+			background: @white;
+			padding: @baseLineHeight;
+		}
 	}
 }
 
@@ -125,7 +126,7 @@ aside.sidebar {
 	.row();
 	overflow: hidden;
 	
-	@media(@small) {
+	@media @small, @highdensity {
 		.column(12);
 		.features {
 			.row(12);

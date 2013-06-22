@@ -22,7 +22,7 @@ I want to:
 
 It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. It then bundles a Gruntfile with some useful tasks to handle livereload, compilation of Jade (layouts and partials), Less, CoffeeScript and Markdown, and supports quick static site generation.
 
-It's everything you need to make a quick new site with a ready made workflow.
+It's everything I need to make a quick new site with a ready made workflow.
 
 ## What's not?
 Pre-defined styles, beyond very basic defaults.

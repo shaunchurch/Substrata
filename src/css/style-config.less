@@ -126,7 +126,19 @@
 @borderRadiusLarge:     6px;
 @borderRadiusSmall:     3px;
 
-@small:		~"min-width: 480px";
-@medium: 	~"min-width: 768px";
-@large:		~"min-width: 980px";
-@xlarge:	~"min-width: 1200px";
+@small-width: 480px;
+@medium-width: 768px;
+@large-width: 980px;
+@xlarge-width: 1200px;
+
+@small:		~"min-width: @{small-width}";
+@medium: 	~"min-width: @{medium-width}";
+@large:		~"min-width: @{large-width}";
+@xlarge:	~"min-width: @{xlarge-width}";
+
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+
+              

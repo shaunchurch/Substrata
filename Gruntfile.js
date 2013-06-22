@@ -40,6 +40,17 @@ module.exports = function(grunt) {
       }
     },
 
+    less: {
+      build: {
+        options: {
+          yuicompress: true
+        },
+        files: {
+          'dist/css/main.min.css': 'src/css/main.less'
+        }
+      }
+    },
+
     coffee: {     
       build: {
         compile: {
@@ -85,7 +96,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ['src/css/less/*.less', 'src/css/main.less'],
-        tasks: ['recess']   
+        tasks: ['less']   
       },
       js: {
         files: ['src/js/**/*.js', 'src/js/*.js'],
@@ -139,9 +150,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-open');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('default', ['jshint', 'uglify', 'recess']);
-  grunt.registerTask('server', ['clean:build', 'jshint', 'recess:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
-  grunt.registerTask('build', ['clean:build', 'jshint', 'recess:build', 'coffee:build', 'pages' ]);
+  grunt.registerTask('server', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
+  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages' ]);
 
 };
