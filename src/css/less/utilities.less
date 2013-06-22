@@ -43,12 +43,21 @@
 
 // reset list defaults
 .list-reset {
-	margin: 0;
+	margin: 0 0 @baseLineHeight*2 0;
 	padding: 0;
-	list-style-type: none;	
+	list-style-type: none;
+  .clearfix();
 }
 
 .negative-margins(@px) {
   margin-left: -@px;
   margin-right: -@px;
+}
+
+.rotate(@deg: 30deg) {
+  transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  -ms-transform: rotate(@deg);
+  -webkit-transform: rotate(@deg);
+  -o-transform: rotate(@deg);
 }

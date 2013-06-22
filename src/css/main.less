@@ -4,27 +4,33 @@
 /*** [ Example Layout ] ***/
 
 /* ==========================================================[ Base Styles - all viewports ]=== */
-
-body {
-	border-top: @baseLineHeight/2 solid @brand-blue;
-	margin: 0; padding: 0 2%;
+* { box-sizing: border-box;}
+html {
+	width: 100%;
+	overflow-x: hidden;
+	padding-top: @baseLineHeight*3;
 }
 
 header {
-	.negative-margins(2%);
+	position: absolute;
+	left: -20px;
+	width: 104%;
 	.text-center;	
-	padding-top: @baseLineHeight*2;
-	padding-bottom: @baseLineHeight*2;
-	// background: url('../images/src/images/windowblur.jpg') center 800px;
-	background: @brand-blue;
+	.rotate(3deg);
+	padding-top: @baseLineHeight*7;
+	padding-bottom: @baseLineHeight*3;
+	background: url('../images/src/images/windowblur.jpg') center bottom;
+	margin-top: -@baseLineHeight*5;
 	margin-bottom: @baseLineHeight*2;
 	h1 {
 		color: @white;
 	}
-
 }
 
 nav#primary {
+	position: absolute;
+	top: 0;
+	z-index: 100;
 	ul {
 		.list-reset;
 		.clearfix;
@@ -34,8 +40,8 @@ nav#primary {
 			a {
 				.transition();
 				display: block;				
-				padding: @baseLineHeight/2 @baseLineHeight/2;
-				font-weight: bold;
+				padding: @baseLineHeight/2 @baseLineHeight/2;				
+				color: lighten(@grayLight,20%);
 				&:hover {
 					background: @grayLighter;
 					color: @brand-blue;
@@ -44,6 +50,22 @@ nav#primary {
 			}
 		}
 	}
+}
+
+section.content {
+	padding: 0 @baseLineHeight*2 0 @baseLineHeight*2;
+	&.homepage {
+		margin-top: 225px;
+	}
+
+}
+
+aside.sidebar.homepage {	
+	margin-top: 150px;
+	position: relative;
+	z-index: 101;
+	background: @white;
+	padding: @baseLineHeight;
 }
 
 .latest-posts {
@@ -61,13 +83,36 @@ nav#primary {
 	}
 }
 
+.section.content {
+	.row();
+}
+
+.install {
+	.clearfix();
+	.commands, .hpfeatures {
+		width: 50%;
+		float: left;
+	}	
+}
+
+
 footer {
 	border-top: 1px solid @grayLighter;
 	padding-top: @baseLineHeight;
 }
 
+
+
+/* Typography */
+p, li {
+		color: lighten(@gray,10%);
+}
 a {
 	.transition();	
+}
+h2.intro {
+	font-weight: bold;
+	font-size: @baseFontSize*1.5;
 }
 
 /* ==========================================================[ Break Points ]=== */
@@ -103,7 +148,13 @@ a {
 
 /* Tablet to desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-
+	aside.sidebar {
+		padding: 0 @baseLineHeight*2;
+	}
+	footer {
+		margin-top: @baseLineHeight*2;
+		.column(12);
+	}
 }
 
 /* Desktop or big toys */
