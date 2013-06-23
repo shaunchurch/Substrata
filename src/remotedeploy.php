@@ -181,11 +181,11 @@ $commands[] = sprintf(
 	, TMP_DIR
 );
 
-// Update the submodules
-$commands[] = sprintf(
-	'%s submodule update --init --recursive'
-	, $binaries['git']
-);
+// // Update the submodules
+// $commands[] = sprintf(
+// 	'%s submodule update --init --recursive'
+// 	, $binaries['git']
+// );
 
 // install dependencies NPM
 $commands[] = sprintf(
@@ -254,7 +254,7 @@ $commands['cleanup'] = sprintf(
 );
 
 // =======================================[ Run the command steps ]===
-
+$hc->message_room($room, $from, '<span style="color: black;">Starting new deployment.</span> '.$link, 'html');		
 foreach ($commands as $command) {
 	set_time_limit(TIME_LIMIT); // Reset the time limit for each command
 	if (file_exists(TMP_DIR) && is_dir(TMP_DIR)) {
