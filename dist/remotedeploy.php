@@ -25,7 +25,7 @@ define('SECRET_ACCESS_TOKEN', 'changemenow');
  *
  * @var string
  */
-define('REMOTE_REPOSITORY', 'https://github.com/markomarkovic/simple-php-git-deploy.git');
+define('REMOTE_REPOSITORY', 'https://github.com/shaunchurch/Substrata.git');
 
 /**
  * Which branch are we going to use for deployment.
@@ -40,7 +40,7 @@ define('BRANCH', 'master');
  *
  * @var string Full path including the trailing slash
  */
-define('TARGET_DIR', '/tmp/simple-php-git-deploy/');
+define('TARGET_DIR', '/home/shaunch/substrata.shaunchurch.com/');
 
 /**
  * Weather to delete the files that are not in the repository but are on the
