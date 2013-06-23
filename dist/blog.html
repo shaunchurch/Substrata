@@ -75,7 +75,27 @@
       <p><small>Cobbled together by <a href="http://shaunchurch.com">@shaunchurch</a>. Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.</small></p>
     </footer>
     <script src="components/zepto/zepto.min.js"></script>
-    <script src="/js/main.min.js"></script>
-    <script src="components/zepto/zepto.min.js"></script>
+    <script src="/js/main.min.js"></script>		<!-- Google Web Fonts -->
+        <script type="text/javascript">
+              WebFontConfig = {
+                google: { families: [ 'Open+Sans:400,700:latin' ] }
+              };
+              (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);})(); 
+        </script>
+
+        <!-- Google Analytics -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
   </body>
 </html>
