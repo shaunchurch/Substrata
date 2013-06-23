@@ -1,4 +1,4 @@
-# Substrata
+# Substrata [![Build Status](https://travis-ci.org/shaunchurch/Substrata.png?branch=master)](https://travis-ci.org/shaunchurch/Substrata)
 
 A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate with skeleton build and deployment tools. 
 
@@ -12,7 +12,6 @@ I want to:
 	$ cd my-new-project
 	$ npm install
 	$ bower install
-	$ subl .	
 	$ grunt server
 
 ... and begin what's unique to this project.
@@ -27,11 +26,8 @@ It's everything I need to make a quick new site with a ready made workflow.
 ## What's not?
 Pre-defined styles, beyond very basic defaults.
 
-
 ## What's next?
-- Deployment setup
-- Fix copy task
+
 - RSS /feed.xml
-- Add carefully selected base styles?
+- Add carefully selected base styles
 - Parsley for in built form validation?
-- Maybe switch to .sass because I'm getting sick of curly brackets?
