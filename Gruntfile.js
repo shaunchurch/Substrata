@@ -154,6 +154,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint', 'uglify', 'recess']);
   grunt.registerTask('server', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
-  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages' ]);
+  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
 
 };

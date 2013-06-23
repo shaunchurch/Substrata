@@ -30,5 +30,8 @@ Pre-defined styles, beyond very basic defaults.
 
 ## What's next?
 - Deployment setup
+- Fix copy task
+- RSS /feed.xml
 - Add carefully selected base styles?
 - Parsley for in built form validation?
+- Maybe switch to .sass because I'm getting sick of curly brackets?

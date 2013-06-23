@@ -7,7 +7,7 @@
 	margin: @baseLineHeight 0;
 	cursor: pointer;
 	&:hover {
-		background: darken(@buttonPrimaryColor, 10%) !important;
+		background: darken(@buttonStandardColor, 10%) !important;
 		color: @buttonStandardText;
 		text-decoration: none;
 		
@@ -21,4 +21,7 @@
 .btn.primary {
 	background: @buttonPrimaryColor;
 	color: @buttonPrimaryText;
+	&:hover {
+		background: darken(@buttonPrimaryColor, 10%) !important;
+	}
 }
