@@ -84,6 +84,24 @@ section.content {
 
 aside.sidebar {	
 	margin: 0 @line-height-computed*2;
+	
+	a.btn.block {
+		@media(@small) {
+			width: 47.5%;
+			float: left;
+			&:nth-of-type(odd) {
+				margin-right: 2.5%;
+			}
+			&:nth-of-type(even) {
+				margin-left: 2.5%;
+			}
+		}
+		@media(@medium) {
+			width: 100%;
+			float: none;
+		}
+	}	
+
 	@media(@medium) {
 		.column(3);
 		&.homepage {
@@ -92,7 +110,7 @@ aside.sidebar {
 			z-index: 101;
 			background: @white;
 			padding: 0 @line-height-computed;
-		}
+		}		
 	}
 }
 

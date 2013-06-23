@@ -6,10 +6,13 @@
 	margin: @line-height-computed 0;
 	cursor: pointer;
 	&:hover {
-		background: darken(@btn-default-bg, 10%) !important;
+		background: darken(@btn-default-bg, 10%);
 		color: @btn-default-color;
 		text-decoration: none;
 		
+	}
+	&:active {
+		background: darken(@btn-default-bg, 40%);
 	}
 }
 
@@ -21,6 +24,9 @@
 	background: @btn-primary-bg;
 	color: @btn-primary-color;
 	&:hover {
-		background: darken(@btn-primary-bg, 10%) !important;
+		background: darken(@btn-primary-bg, 10%);
+	}
+	&:active {
+		background: darken(@btn-primary-bg, 20%);
 	}
 }

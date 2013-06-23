@@ -27,6 +27,29 @@ body {
   background-color: @body-bg;
 }
 
+// Chromeframe warning
+.chromeframe {
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: red;
+  color: white;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: @line-height-computed;
+  a {
+    color: black;
+    font-weight: bold;
+    text-decoration: underline;
+    &:hover {
+      color: white;
+    }
+  }
+
+}
+
 // Reset fonts for revelant elements
 input,
 button,
