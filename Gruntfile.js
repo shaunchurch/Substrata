@@ -73,7 +73,7 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [          
-          {expand: true, src: ['.htaccess'], dest: 'dist/' },
+          {expand: true, cwd: 'src', src: ['.htaccess', 'remotedeploy.php'], dest: 'dist/' },
           {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'}
           
         ]
