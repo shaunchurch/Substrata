@@ -255,6 +255,9 @@ $commands['cleanup'] = sprintf(
 
 // =======================================[ Run the command steps ]===
 $hc->message_room($room, $from, '<span style="color: black;">Starting new deployment.</span> '.$link, 'html');		
+$nocommand = sizeof($commands);
+$currentcommand = 1;
+
 foreach ($commands as $command) {
 	set_time_limit(TIME_LIMIT); // Reset the time limit for each command
 	if (file_exists(TMP_DIR) && is_dir(TMP_DIR)) {
@@ -268,10 +271,10 @@ foreach ($commands as $command) {
 	exec($command.' 2>&1', $tmp, $return_code); // Execute the command
 
 	// see if output contains our success messages
-	if(strpos("Done, without errors.", $tmp)) {
+	if(strpos($tmp, "Done, without errors.")) {
 		$hc->message_room($room, $from, '<span style="color: green;">Build successful.</span> '.$link, 'html');		
 	}
-	if(strpos("sending incremental file list", $tmp)) {
+	if(strpos($tmp, "sending incremental file list")) {
 		$hc->message_room($room, $from, '<span style="color: green;">Deploy successful.</span> '.$link, 'html');			
 	}
 
@@ -284,6 +287,8 @@ foreach ($commands as $command) {
 		, htmlentities(trim(implode("\n", $tmp)))
 	);
 	flush(); // Try to output everything as it happens
+
+
 
 	// Error handling and cleanup
 	if ($return_code !== 0) {
