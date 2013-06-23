@@ -25,7 +25,7 @@ define('SECRET_ACCESS_TOKEN', 'changemenow');
  *
  * @var string
  */
-define('REMOTE_REPOSITORY', 'https://github.com/markomarkovic/simple-php-git-deploy.git');
+define('REMOTE_REPOSITORY', 'https://github.com/shaunchurch/Substrata.git');
 
 /**
  * Which branch are we going to use for deployment.
