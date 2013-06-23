@@ -26,27 +26,14 @@ module.exports = function(grunt) {
       }
     },
 
-    recess: {     
-      build: {     
-        options: {
-            compile: true,
-            compress: true
-        },
-        files: {
-            'dist/css/main.min.css': [
-                'src/css/main.less'                    
-            ]
-        }        
-      }
-    },
-
     less: {
       build: {
         options: {
           yuicompress: true
         },
         files: {
-          'dist/css/main.min.css': 'src/css/main.less'
+          'dist/css/main.min.css': [ 'src/css/main.less', 
+                                     'src/css/style-config.less' ]
         }
       }
     },
