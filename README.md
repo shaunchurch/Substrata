@@ -1,4 +1,5 @@
-# Substrata [![Build Status](https://travis-ci.org/shaunchurch/Substrata.png?branch=master)](https://travis-ci.org/shaunchurch/Substrata)
+# Substrata [![Build Status](https://travis-ci.org/shaunchurch/Substrata.png?branch=master)](https://travis-ci.org/shaunchurch/Substrata) [![Dependency Status](https://gemnasium.com/shaunchurch/Substrata.png)](https://gemnasium.com/shaunchurch/Substrata)
+
 
 A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-end boilerplate with skeleton build and deployment tools. 
 
