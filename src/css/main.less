@@ -77,20 +77,21 @@ section.content {
 	@media(@medium) {
 		.column(9);
 		&.homepage {
-			margin-top: 225px;
+			margin-top: 245px;
 		}
 	}
 }
 
 aside.sidebar {	
+	margin: 0 @line-height-computed*2;
 	@media(@medium) {
 		.column(3);
 		&.homepage {
-			margin-top: 150px;
+			margin: 150px 0 0 0;
 			position: relative;
 			z-index: 101;
 			background: @white;
-			padding: @line-height-computed;
+			padding: 0 @line-height-computed;
 		}
 	}
 }
