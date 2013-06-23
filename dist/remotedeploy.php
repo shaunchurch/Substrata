@@ -131,7 +131,7 @@ Running as <b><?php echo trim(shell_exec('whoami')); ?></b>.
 <?php
 // Check if the needed programs are available
 $binaries = array();
-foreach (array('git', 'rsync', 'tar') as $command) {
+foreach (array('git', 'rsync', 'tar', 'npm', 'bower', 'grunt') as $command) {
 	$path = trim(shell_exec('which '.$command));
 	if ($path == '') {
 		die(sprintf('<div class="error"><b>%s</b> not available. It need to be installed on the server for this script to work.</div>', $command));
@@ -170,6 +170,23 @@ $commands[] = sprintf(
 $commands[] = sprintf(
 	'%s submodule update --init --recursive'
 	, $binaries['git']
+);
+
+// install dependencies NPM
+$commands[] = sprintf(
+	'%s install', 
+	$binaries['npm']
+);
+// install dependencies Bower
+$commands[] = sprintf(
+	'%s install',
+	$binaries['bower']
+);
+
+// grunt build process
+$commands[] = sprintf(
+	'%s build',
+	$binaries['grunt']
 );
 
 // Describe the deployed version
