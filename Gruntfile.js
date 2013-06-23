@@ -80,6 +80,19 @@ module.exports = function(grunt) {
       }
     },
 
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        timeout: 3000,
+        ignoreLeaks: false,
+        grep: '*-test',
+        ui: 'bdd',
+        reporter: 'tap'
+      },
+
+      all: { src: ['test/**/*.js'] }
+    }
+
     watch: {
       options: {
         livereload: true
