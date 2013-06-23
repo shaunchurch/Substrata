@@ -255,9 +255,6 @@ $commands['cleanup'] = sprintf(
 
 // =======================================[ Run the command steps ]===
 $hc->message_room($room, $from, '<span style="color: black;">Starting new deployment.</span> '.$link, 'html');		
-$nocommand = sizeof($commands);
-$currentcommand = 1;
-
 foreach ($commands as $command) {
 	set_time_limit(TIME_LIMIT); // Reset the time limit for each command
 	if (file_exists(TMP_DIR) && is_dir(TMP_DIR)) {
@@ -287,8 +284,6 @@ foreach ($commands as $command) {
 		, htmlentities(trim(implode("\n", $tmp)))
 	);
 	flush(); // Try to output everything as it happens
-
-
 
 	// Error handling and cleanup
 	if ($return_code !== 0) {

@@ -268,10 +268,10 @@ foreach ($commands as $command) {
 	exec($command.' 2>&1', $tmp, $return_code); // Execute the command
 
 	// see if output contains our success messages
-	if(strpos("Done, without errors.", $tmp)) {
+	if(strpos(implode("\n", $tmp), "Done, without errors.")) {
 		$hc->message_room($room, $from, '<span style="color: green;">Build successful.</span> '.$link, 'html');		
 	}
-	if(strpos("sending incremental file list", $tmp)) {
+	if(strpos(implode("\n", $tmp), "sending incremental file list")) {
 		$hc->message_room($room, $from, '<span style="color: green;">Deploy successful.</span> '.$link, 'html');			
 	}
 
