@@ -1,6 +1,33 @@
 //
-// Variables
+// Default Style Config
 // --------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+// ***************
+// ** ATTENTION **
+// ***************
+//
+// ** Default Variables and Configuration
+// ** -----------------------------------
+// ** Over ride these variables in ../style-config.less
+// ** so we can update these without overwriting customisations.
+
+
+
+
+
+
+
+
+
 
 
 // Global values
@@ -427,3 +454,21 @@
 @grid-gutter-width:         30px;
 // Point at which the navbar stops collapsing
 @grid-float-breakpoint:     @screen-tablet;
+
+
+
+// Substrata
+@tiny-width: 480px;
+@small-width: 768px;
+@medium-width: 992px;
+@large-width: 1200px;
+
+@tiny:		~"min-width: @{tiny-width}";
+@small: 	~"min-width: @{small-width}";
+@medium:	~"min-width: @{medium-width}";
+@large:		~"min-width: @{large-width}";
+
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
