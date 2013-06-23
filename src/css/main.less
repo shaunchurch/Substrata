@@ -10,23 +10,23 @@
 html {
 	width: 100%;
 	overflow-x: hidden;
-	padding-top: @baseLineHeight*3;
+	padding-top: @line-height-computed*3;
 }
 
 header {
 	.transition();
 	.text-center;
 	position: relative;
-	padding-top: @baseLineHeight*7;
-	padding-bottom: @baseLineHeight*3;
+	padding-top: @line-height-computed*7;
+	padding-bottom: @line-height-computed*3;
 	background: url('../images/src/images/windowblur.jpg') center bottom;
-	margin-top: -@baseLineHeight*5;
-	margin-bottom: @baseLineHeight*2;	
+	margin-top: -@line-height-computed*5;
+	margin-bottom: @line-height-computed*2;	
 	width: 104%;
 	h1 {
 		color: @white;
 	}	
-	@media(@large) {
+	@media(@medium) {
 		position: absolute;
 		left: -20px;
 		width: 104%;
@@ -44,14 +44,14 @@ nav#primary {
 		.clearfix;
 		li {
 			float: left;
-			margin: 0 @baseLineHeight/2;
+			margin: 0 @line-height-computed/2;
 			a {
 				.transition();
 				display: block;				
-				padding: @baseLineHeight/2 @baseLineHeight/2;				
-				color: lighten(@grayLight,20%);
+				padding: @line-height-computed/2 @line-height-computed/2;				
+				color: lighten(@gray-light,20%);
 				&:hover {
-					background: @grayLighter;
+					background: @gray-lighter;
 					color: @brand-blue;
 					text-decoration: none;
 				}
@@ -61,11 +61,11 @@ nav#primary {
 }
 
 section.content {
-	padding: 0 @baseLineHeight*2;		
+	padding: 0 @line-height-computed*2;		
 	div.post {
-		margin-bottom: @baseLineHeight*3;
+		margin-bottom: @line-height-computed*3;
 	}
-	@media(@medium) {
+	@media(@small) {
 		.install {
 			.clearfix();
 			.row();
@@ -74,7 +74,7 @@ section.content {
 			}
 		}	
 	}	
-	@media(@large) {
+	@media(@medium) {
 		.column(9);
 		&.homepage {
 			margin-top: 225px;
@@ -83,14 +83,14 @@ section.content {
 }
 
 aside.sidebar {	
-	@media(@large) {
+	@media(@medium) {
 		.column(3);
 		&.homepage {
 			margin-top: 150px;
 			position: relative;
 			z-index: 101;
 			background: @white;
-			padding: @baseLineHeight;
+			padding: @line-height-computed;
 		}
 	}
 }
@@ -98,22 +98,22 @@ aside.sidebar {
 .latest-posts {
 	.list-reset;
 	li {
-		border-bottom: 1px solid @grayLighter;
+		border-bottom: 1px solid @gray-lighter;
 		a {
 			display: block;
-			padding: @baseLineHeight/2;
+			padding: @line-height-computed/2;
 			&:hover {
 				text-decoration: none;
-				background: @grayLighter;
+				background: @gray-lighter;
 			}
 		}
 	}
 }
 
 footer {
-	border-top: 1px solid @grayLighter;
-	padding-top: @baseLineHeight;	
-	@media(@large) {
+	border-top: 1px solid @gray-lighter;
+	padding-top: @line-height-computed;	
+	@media(@medium) {
 		.column(12);
 	}
 }
@@ -129,7 +129,7 @@ a {
 
 h2.intro {
 	font-weight: bold;
-	font-size: @baseFontSize*1.5;
+	font-size: @font-size-xlarge;
 }
 
 /*** [ End Example ] ***/
