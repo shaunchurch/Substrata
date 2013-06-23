@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       },   
       build: {
         files: {
-          'dist/js/main.min.js': ['src/js/main.js']
+          'dist/js/main.min.js': ['components/zepto/zepto.min.js','src/js/main.js']
         }
       }
     },
