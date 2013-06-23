@@ -66,13 +66,16 @@ module.exports = function(grunt) {
         dev: ['dev'],
         build: ['dist'],
         pages: ['dist/*.html'],
-        posts: ['dist/posts/*.html']
+        posts: ['dist/posts/*.html'],
+        images: ['dist/images']
     },
 
     copy: {
       main: {
         files: [          
-          {expand: true, src: ['src/images/*'], dest: 'dist/images/'},          
+          {expand: true, src: ['.htaccess'], dest: 'dist/' },
+          {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'}
+          
         ]
       }
     },
@@ -143,4 +146,5 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
   grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
 
+  grunt.registerTask('copytest', ['clean:images', 'copy']);
 };

@@ -19,7 +19,7 @@ header {
 	position: relative;
 	padding-top: @line-height-computed*7;
 	padding-bottom: @line-height-computed*3;
-	background: url('../images/src/images/windowblur.jpg') center bottom;
+	background: url('../images/windowblur.jpg') center bottom;
 	margin-top: -@line-height-computed*5;
 	margin-bottom: @line-height-computed*2;	
 	width: 104%;
@@ -99,6 +99,10 @@ aside.sidebar {
 		@media(@medium) {
 			width: 100%;
 			float: none;
+			&:nth-of-type(even), :nth-of-type(odd) { 
+				margin-left: 0;
+				margin-right: 0;
+			}
 		}
 	}	
 
