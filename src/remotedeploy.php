@@ -148,6 +148,7 @@ $binaries = array();
 foreach (array('git', 'rsync', 'tar', 'npm', 'bower', 'grunt') as $command) {
 	$path = trim(shell_exec('which '.$command));
 	if ($path == '') {
+		$hc->message_room($room, $from, '<span style="color: red;">'.$command.' not available. End.</span> '.$link, 'html');
 		die(sprintf('<div class="error"><b>%s</b> not available. It need to be installed on the server for this script to work.</div>', $command));
 	} else {
 		$binaries[$command] = $path;
@@ -262,9 +263,18 @@ foreach ($commands as $command) {
 	$tmp = array();
 	
 	// send build updates to hipchat
-	$hc->message_room($room, $from, 'Running '.$command.' process...', 'text');
+	// $hc->message_room($room, $from, 'Running '.$command.' process...', 'text');
 
 	exec($command.' 2>&1', $tmp, $return_code); // Execute the command
+
+	// see if output contains our success messages
+	if(strpos("Done, without errors.", $tmp)) {
+		$hc->message_room($room, $from, '<span style="color: green;">Build successful.</span> '.$link, 'html');		
+	}
+	if(strpos("sending incremental file list", $tmp)) {
+		$hc->message_room($room, $from, '<span style="color: green;">Deploy successful.</span> '.$link, 'html');			
+	}
+
 	// Output the result
 	printf('
 <span class="prompt">$</span> <span class="command">%s</span>
@@ -303,7 +313,7 @@ Cleaning up temporary files ...
 	}
 }
 
-$hc->message_room($room, $from, '<span style="color: green;">New build deployed.</span> '.$link, 'html');
+
 ?>
 
 Done.
