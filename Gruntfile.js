@@ -74,8 +74,8 @@ module.exports = function(grunt) {
       main: {
         files: [          
           {expand: true, cwd: 'src', src: ['.htaccess', 'remotedeploy.php'], dest: 'dist/' },
-          {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'}
-          
+          {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'},
+          {expand: true, cwd: 'src/lib', src: ['HipChat.php'], dest: 'dist/lib/'}          
         ]
       }
     },

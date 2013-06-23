@@ -97,6 +97,20 @@ define('TIME_LIMIT', 30);
  */
 define('BACKUP_DIR', false);
 
+// Setup hipcat
+require 'lib/HipChat.php';
+
+$token = 'e9684a507023d6f8dc92b22d1d0847'; // Notifications
+$target = 'https://api.hipchat.com';
+$room = 'Pixsys';
+$from = 'Substrata';
+$url = 'http://substrata.shaunchurch.com';
+$link = '<a href="'.$url.'">'.$url.'</a>';
+
+// initialise hipchat
+$hc = new HipChat\HipChat($token, $target);
+// $hc->message_room($room, $from, 'Remote update initiated for '.$link, 'html');
+
 // ===========================================[ Configuration end ]===
 
 ?>
@@ -246,6 +260,10 @@ foreach ($commands as $command) {
 		chdir(TMP_DIR); // Ensure that we're in the right directory
 	}
 	$tmp = array();
+	
+	// send build updates to hipchat
+	$hc->message_room($room, $from, 'Running '.$command.' process...', 'text');
+
 	exec($command.' 2>&1', $tmp, $return_code); // Execute the command
 	// Output the result
 	printf('
@@ -259,6 +277,7 @@ foreach ($commands as $command) {
 
 	// Error handling and cleanup
 	if ($return_code !== 0) {
+		$hc->message_room($room, $from, '<span style="color: red;">Error encountered. Build halted.</span>', 'html');
 		$tmp = shell_exec($commands['cleanup']);
 		printf('
 <div class="error">
@@ -283,6 +302,8 @@ Cleaning up temporary files ...
 		break;
 	}
 }
+
+$hc->message_room($room, $from, '<span style="color: green;">New build deployed.</span> '.$link, 'html');
 ?>
 
 Done.
