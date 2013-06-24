@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-cli": "latest",
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.9",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-jshint": "~0.5.4",
     "grunt-contrib-watch": "~0.4.4",
     "grunt-recess": "~0.3.3",
     "grunt-contrib-connect": "~0.3.0",
@@ -21,7 +21,7 @@
     "grunt-contrib-less": "~0.6.1",
     "matchdep": "~0.1.2",
     "grunt-simple-mocha": "~0.4.0",
-    "grunt-karma": "~0.4.4",
+    "grunt-karma": "~0.5.0",
     "should": "~1.2.2"
   },
   "engines": {
