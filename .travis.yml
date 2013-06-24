@@ -1,7 +1,13 @@
 language: node_js
-node_js:
-  - "0.11"
+node_js:  
   - "0.10"
   - "0.8"
 before_script:
   - npm install -g grunt-cli
+  - npm install -g bower
+  - bower install
+  - grunt build
+script:
+  - grunt qtest
+notifications:
+  hipchat: 7d5f7008f90b802252c3de2b666de4@Pixsys
