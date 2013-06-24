@@ -9,7 +9,7 @@ basePath = '';
 // list of files / patterns to load in the browser
 files = [
   JASMINE,
-  JASMINE_ADAPTER,  
+  JASMINE_ADAPTER,
   'test/browserSpec.js',
   'dist/js/main.min.js'
   // {pattern: 'dist/js/main.min.js', included: true}
