@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.5 (Mac)" package="" timestamp="2013-06-24T10:11:08" id="0" hostname="ss-iMac.local" tests="5" errors="0" failures="0" time="0.008">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.5.0 Safari/534.34"/>
+    </properties>
+    <testcase name="is in the DOM" time="0.007" classname="PhantomJS 1.5 (Mac).Dom Tests"/>
+    <testcase name="is a child of the body" time="0" classname="PhantomJS 1.5 (Mac).Dom Tests"/>
+    <testcase name="has the right text" time="0.001" classname="PhantomJS 1.5 (Mac).Dom Tests"/>
+    <testcase name="has the right background" time="0" classname="PhantomJS 1.5 (Mac).Dom Tests"/>
+    <testcase name="has a function called testRun which returns true" time="0" classname="PhantomJS 1.5 (Mac).Dom Tests"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>
