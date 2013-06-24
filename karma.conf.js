@@ -10,10 +10,10 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  // 'node_modules/karma/adapter/jasmine.js',
-  // 'node_modules/karma/adapter/lib/jasmine.js',
-  'test/browserSpec.js',
-  'dist/js/main.min.js'
+  'node_modules/karma/adapter/jasmine.js',
+  'node_modules/karma/adapter/lib/jasmine.js',
+  // 'test/browserSpec.js',
+  // 'dist/js/main.min.js'
   // {pattern: 'dist/js/main.min.js', included: true}
 ];
 
@@ -43,7 +43,8 @@ colors = true;
 
 // level of logging
 // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-logLevel = LOG_INFO;
+// logLevel = LOG_INFO;
+logLevel = 1;
 
 
 // enable / disable watching file and executing tests whenever any file changes
