@@ -8,6 +8,7 @@ before_script:
   - npm install -g karma
   - bower install
   - grunt build
+  - rm -rf node_modules/karma
 script:
   - grunt qtest
 notifications:
