@@ -15,3 +15,6 @@ Thumbs.db
 # third party libraries
 node_modules
 components
+
+# compile directory
+#dist

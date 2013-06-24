@@ -10,5 +10,10 @@ function Substrata() {
     
     this.setupWindow = function() {
         console.log('setupWindow()');
+        return window.innerHeight;
+    };
+
+    this.testRun = function() {
+        return true;
     };
 }
