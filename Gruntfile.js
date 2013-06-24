@@ -79,6 +79,33 @@ module.exports = function(grunt) {
         ]
       }
     },
+    karma: {
+      options: {
+        configFile: 'karma.conf.js',
+        runnerPort: 9999,
+        browsers: ['PhantomJS']
+      },
+      continuous: {
+        singleRun: true,
+        browsers: ['PhantomJS']
+      },
+      dev: {
+        reporters: 'dots'
+      }
+    },
+
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        timeout: 10000,
+        ignoreLeaks: false,
+        ui: 'bdd',
+        reporter: 'spec'
+      },
+      all: {
+        src: ['test/buildSpec.js']
+      }
+    },
 
     watch: {
       options: {
@@ -89,8 +116,8 @@ module.exports = function(grunt) {
         tasks: ['less']   
       },
       js: {
-        files: ['src/js/**/*.js', 'src/js/*.js'],
-        tasks: ['uglify']
+        files: ['src/js/**/*.js', 'src/js/*.js', 'test/*.js'],
+        tasks: ['uglify', 'qtest']
       },
       jade: {
          files: ['src/**/**/*.jade', 'src/**/*.jade', 'src/*.jade'],
@@ -132,6 +159,9 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['jshint', 'uglify', 'recess']);
   grunt.registerTask('server', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
   grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
+
+  grunt.registerTask('test', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'karma:continuous']);
+  grunt.registerTask('qtest', ['karma:continuous', 'simplemocha']);
 
   grunt.registerTask('copytest', ['clean:images', 'copy']);
 };
