@@ -8,10 +8,10 @@ basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
-  // JASMINE,
-  // JASMINE_ADAPTER,
-  'node_modules/karma/adapter/jasmine.js',
-  'node_modules/karma/adapter/lib/jasmine.js',
+  JASMINE,
+  JASMINE_ADAPTER,
+  // 'node_modules/karma/adapter/jasmine.js',
+  // 'node_modules/karma/adapter/lib/jasmine.js',
   'test/browserSpec.js',
   'dist/js/main.min.js'
   // {pattern: 'dist/js/main.min.js', included: true}
