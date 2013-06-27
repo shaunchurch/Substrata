@@ -79,19 +79,28 @@ module.exports = function(grunt) {
         ]
       }
     },
-    karma: {
-      options: {
-        configFile: 'karma.conf.js',
-        runnerPort: 9999,
-        browsers: ['PhantomJS']
-      },
-      continuous: {
-        singleRun: true,
-        browsers: ['PhantomJS']
-      },
-      dev: {
-        reporters: 'dots'
-      }
+    // karma: {
+    //   options: {
+    //     configFile: 'karma.conf.js',
+    //     runnerPort: 9999,
+    //     browsers: ['PhantomJS']
+    //   },
+    //   continuous: {
+    //     singleRun: true,
+    //     browsers: ['PhantomJS']
+    //   },
+    //   dev: {
+    //     reporters: 'dots'
+    //   }
+    // },
+
+
+    mocha: {
+      // runs all html files (except test2.html) in the test dir
+      // In this example, there's only one, but you can add as many as
+      // you want. You can split them up into different groups here
+      // ex: admin: [ 'test/admin.html' ]
+      all: [ 'test/**/!(test2).html' ],
     },
 
     simplemocha: {
@@ -161,7 +170,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
 
   grunt.registerTask('test', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'karma:continuous']);
-  grunt.registerTask('qtest', ['karma:continuous', 'simplemocha']);
+  grunt.registerTask('qtest', ['mocha', 'simplemocha']);
 
   grunt.registerTask('copytest', ['clean:images', 'copy']);
 };
