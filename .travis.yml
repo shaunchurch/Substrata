@@ -1,12 +1,12 @@
 language: node_js
-node_js:  
+node_js:
+  - "0.11"
   - "0.10"
   - "0.8"
 before_script:
   - npm install --dev
   - npm install -g grunt-cli
   - npm install -g bower
-  - npm install -g karma
   - bower install
   - grunt build
 script:

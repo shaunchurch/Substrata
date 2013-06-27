@@ -21,10 +21,7 @@
     "grunt-contrib-less": "~0.6.1",
     "matchdep": "~0.1.2",
     "grunt-simple-mocha": "~0.4.0",
-    "grunt-karma": "~0.5.0",
-    "should": "~1.2.2",
-    "karma": "~0.9.3",
-    "grunt-mocha": "~0.3.4"
+    "grunt-mocha": "~0.3.2"
   },
   "engines": {
     "node": "latest"
