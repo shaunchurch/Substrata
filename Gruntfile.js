@@ -1,18 +1,17 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    
+
     uglify: {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },   
+      },
       build: {
         files: {
           'dist/js/main.min.js': ['components/zepto/zepto.min.js','src/js/main.js']
         }
       }
     },
-      
     jshint: {
       files: ['gruntfile.js', 'src/js/*.js'],
       options: {
@@ -25,20 +24,18 @@ module.exports = function(grunt) {
         }
       }
     },
-
     less: {
       build: {
         options: {
           yuicompress: true
         },
         files: {
-          'dist/css/main.min.css': [ 'src/css/main.less', 
+          'dist/css/main.min.css': [ 'src/css/main.less',
                                      'src/css/style-config.less' ]
         }
       }
     },
-
-    coffee: {     
+    coffee: {
       build: {
         compile: {
           files: {
@@ -48,61 +45,40 @@ module.exports = function(grunt) {
         }
       }
     },
-
     pages: {
       options: {
         pageSrc: 'src/views/pages'
-      },        
+      },
       posts: {
-        
+
           src: 'src/views/posts',
           dest: 'dist',
           layout: 'src/views/layouts/post.jade',
-          url: 'post/:title'        
+          url: 'post/:title'
       }
     },
-
-    clean: { 
+    clean: {
         dev: ['dev'],
         build: ['dist'],
         pages: ['dist/*.html'],
         posts: ['dist/posts/*.html'],
         images: ['dist/images']
     },
-
     copy: {
       main: {
-        files: [          
+        files: [
           {expand: true, cwd: 'src', src: ['.htaccess', 'remotedeploy.php'], dest: 'dist/' },
           {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'},
-          {expand: true, cwd: 'src/lib', src: ['HipChat.php'], dest: 'dist/lib/'}          
+          {expand: true, cwd: 'src/lib', src: ['HipChat.php'], dest: 'dist/lib/'}
         ]
       }
     },
-    // karma: {
-    //   options: {
-    //     configFile: 'karma.conf.js',
-    //     runnerPort: 9999,
-    //     browsers: ['PhantomJS']
-    //   },
-    //   continuous: {
-    //     singleRun: true,
-    //     browsers: ['PhantomJS']
-    //   },
-    //   dev: {
-    //     reporters: 'dots'
-    //   }
-    // },
-
-
     mocha: {
-      // runs all html files (except test2.html) in the test dir
-      // In this example, there's only one, but you can add as many as
-      // you want. You can split them up into different groups here
-      // ex: admin: [ 'test/admin.html' ]
-      all: [ 'test/**/!(test2).html' ],
+      all: [ 'test/**/*.html' ],
+      options: {
+        reporter: 'Spec'
+      }
     },
-
     simplemocha: {
       options: {
         globals: ['should'],
@@ -115,14 +91,13 @@ module.exports = function(grunt) {
         src: ['test/buildSpec.js']
       }
     },
-
     watch: {
       options: {
         livereload: true
       },
       css: {
         files: ['src/css/less/*.less', 'src/css/main.less'],
-        tasks: ['less']   
+        tasks: ['less']
       },
       js: {
         files: ['src/js/**/*.js', 'src/js/*.js', 'test/*.js'],
@@ -145,13 +120,11 @@ module.exports = function(grunt) {
         tasks: ['clean:posts', 'pages']
       }
     },
-
     open : {
       dev : {
         path: 'http://127.0.0.1:9001'
       }
     },
-
     connect: {
       server: {
         options: {
@@ -160,17 +133,14 @@ module.exports = function(grunt) {
         }
       }
     }
-    
   });
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('default', ['jshint', 'uglify', 'recess']);
-  grunt.registerTask('server', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'open', 'watch' ]);  
+  grunt.registerTask('default', ['server']);
   grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
-
-  grunt.registerTask('test', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy', 'connect', 'karma:continuous']);
-  grunt.registerTask('qtest', ['mocha', 'simplemocha']);
-
-  grunt.registerTask('copytest', ['clean:images', 'copy']);
+  grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
+  grunt.registerTask('qtest', ['simplemocha', 'mocha']);
+  grunt.registerTask('test', ['build', 'qtest']);
+  grunt.registerTask('watch', ['server']);
 };
