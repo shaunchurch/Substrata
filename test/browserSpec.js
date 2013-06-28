@@ -7,11 +7,11 @@ describe("Dom Tests", function() {
     });
 
     it("has a function called testRun which returns true", function() {
-        expect(true).to.be.true;
+        expect(substrata.testRun()).to.be.true;
     });
 
     it("has a function called setupWindow which returns an integer", function() {
-        expect(true).to.be.true;
+        expect(substrata.setupWindow()).to.be.a('number');
     })
 
 });
