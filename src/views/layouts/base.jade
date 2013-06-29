@@ -14,26 +14,16 @@ html
     block title
       title= "Substrata"
   body
-
     block header
       div.test= currentPage
       nav#primary
         ul
           li
-            if currentPage == "home"
-              a(href="/", class="active") Home
-            else
-              a(href="/") Home
+            a(href="/", class=(currentPage === 'index' ? 'current' : '')) Home
           li
-            if currentPage == "blog"
-              a(href="/blog.html", class="current") Blog
-            else
-              a(href="/blog.html") Blog
+            a(href="/blog.html", class=(currentPage === 'blog' ? 'current' : '')) Blog
           li
-            if currentPage == "about"
-              a(href="/about.html", class="current") About
-            else
-              a(href="/about.html") About
+            a(href="/about.html", class=(currentPage === 'about' ? 'current' : '')) About
 
     block content
     block footer
@@ -43,7 +33,6 @@ html
             | Cobbled together by
             a(href='http://shaunchurch.com') @shaunchurch
             | . Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
-
     script(src='/js/main.min.js',type="text/javascript")
 
     include ../partials/snippets.html
