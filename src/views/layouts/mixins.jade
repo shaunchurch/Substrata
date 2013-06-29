@@ -1,6 +1,7 @@
 mixin postdate(date)
   h4.post-date= date.toDateString()
   // h4.post-date= [date.getUTCFullYear(), date.getMonth() + 1, date.getDate()].join(' - ')
+
 mixin builddate()
   - var time = new Date();
   span= [time.getUTCFullYear(), time.getMonth() + 1, time.getDate()].join('/')
