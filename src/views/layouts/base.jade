@@ -29,10 +29,12 @@ html
       footer
         p
           small
-            | Cobbled together by
+            |Cobbled together by 
             a(href='http://shaunchurch.com') @shaunchurch
-            | . Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
-    script(src='/js/main.min.js',type="text/javascript")
+            |. Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
+            |Last built: 
+            mixin builddate()
 
+    script(src='/js/main.min.js',type="text/javascript")
     include ../partials/snippets.html
     include ../partials/upgrade-browser.html
