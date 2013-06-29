@@ -47,10 +47,13 @@ module.exports = function(grunt) {
     },
     pages: {
       options: {
-        pageSrc: 'src/views/pages'
+        pageSrc: 'src/views/pages',
+        // pagination: {
+          // listPage: 'src/views/pages/blog.jade',
+          // postsPerPage: 3
+        // }
       },
       posts: {
-
           src: 'src/views/posts',
           dest: 'dist',
           layout: 'src/views/layouts/post.jade',
