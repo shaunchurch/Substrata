@@ -142,5 +142,5 @@ module.exports = function(grunt) {
   grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
   grunt.registerTask('qtest', ['simplemocha', 'mocha']);
   grunt.registerTask('test', ['build', 'qtest']);
-  grunt.registerTask('watch', ['server']);
+  // grunt.registerTask('watch', ['server']);
 };

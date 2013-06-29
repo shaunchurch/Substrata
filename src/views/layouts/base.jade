@@ -1,34 +1,46 @@
+include mixins.jade
+
 !!! 5
 html
   head
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-       
+
     meta(name='description', content='')
-    meta(name='viewport', content='width=device-width')    
-    
+    meta(name='viewport', content='width=device-width')
+
     link(rel='stylesheet', href='/css/main.min.css')
-    
+
     block title
       title= "Substrata"
   body
 
-    block header      
+    block header
+      div.test= currentPage
       nav#primary
         ul
           li
-            a(href="/") Home
+            if currentPage == "home"
+              a(href="/", class="active") Home
+            else
+              a(href="/") Home
           li
-            a(href="/about.html") About
+            if currentPage == "blog"
+              a(href="/blog.html", class="current") Blog
+            else
+              a(href="/blog.html") Blog
           li
-            a(href="/blog.html") Blog
-                
+            if currentPage == "about"
+              a(href="/about.html", class="current") About
+            else
+              a(href="/about.html") About
+
     block content
     block footer
-      footer        
+      footer
         p
           small
-            | Cobbled together by 
+            | Cobbled together by
             a(href='http://shaunchurch.com') @shaunchurch
             | . Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
 

@@ -21,18 +21,18 @@ header {
 	padding-bottom: @line-height-computed*3;
 	background: url('../images/windowblur.jpg') center bottom;
 	margin-top: -@line-height-computed*6;
-	margin-bottom: @line-height-computed*2;	
+	margin-bottom: @line-height-computed*2;
 	width: 104%;
 	h1 {
 		color: @white;
-	}	
+	}
 	@media(@medium) {
 		position: absolute;
 		left: -20px;
 		width: 104%;
-		box-sizing: content-box;	
-		.rotation(3deg);		
-	}	
+		box-sizing: content-box;
+		.rotation(3deg);
+	}
 }
 
 nav#primary {
@@ -47,13 +47,16 @@ nav#primary {
 			margin: 0 @line-height-computed/2;
 			a {
 				.transition();
-				display: block;				
-				padding: @line-height-computed/2 @line-height-computed/2;				
+				display: block;
+				padding: @line-height-computed/2 @line-height-computed/2;
 				color: lighten(@gray-light,20%);
 				&:hover {
 					background: @gray-lighter;
 					color: @brand-blue;
 					text-decoration: none;
+				}
+				&.current {
+					background: @gray-lighter;
 				}
 			}
 		}
@@ -61,7 +64,7 @@ nav#primary {
 }
 
 section.content {
-	padding: 0 @line-height-computed*2;		
+	padding: 0 @line-height-computed*2;
 	div.post {
 		margin-bottom: @line-height-computed*3;
 	}
@@ -72,8 +75,8 @@ section.content {
 			.commands, .hpfeatures {
 				.column(6);
 			}
-		}	
-	}	
+		}
+	}
 	@media(@medium) {
 		.column(9);
 		&.homepage {
@@ -82,9 +85,9 @@ section.content {
 	}
 }
 
-aside.sidebar {	
+aside.sidebar {
 	margin: 0 @line-height-computed*2;
-	
+
 	a.btn.block {
 		@media(@small) {
 			width: 47.5%;
@@ -99,12 +102,12 @@ aside.sidebar {
 		@media(@medium) {
 			width: 100%;
 			float: none;
-			&:nth-of-type(even), :nth-of-type(odd) { 
+			&:nth-of-type(even), :nth-of-type(odd) {
 				margin-left: 0;
 				margin-right: 0;
 			}
 		}
-	}	
+	}
 
 	@media(@medium) {
 		.column(3);
@@ -114,7 +117,7 @@ aside.sidebar {
 			z-index: 101;
 			background: @white;
 			padding: 0 @line-height-computed;
-		}		
+		}
 	}
 }
 
@@ -135,7 +138,7 @@ aside.sidebar {
 
 footer {
 	border-top: 1px solid @gray-lighter;
-	padding-top: @line-height-computed;	
+	padding-top: @line-height-computed;
 	@media(@medium) {
 		.column(12);
 	}
@@ -147,7 +150,7 @@ p, li {
 }
 
 a {
-	.transition();	
+	.transition();
 }
 
 h2.intro {

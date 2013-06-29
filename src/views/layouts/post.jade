@@ -6,9 +6,8 @@ block title
 block content
   section.content
     h1= post.title
-    h4= post.date
+    mixin postdate(post.date)
     div.post!= post.content
   aside.sidebar
     include ../partials/latest-posts
     include ../partials/try
-    
