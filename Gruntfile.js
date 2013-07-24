@@ -48,6 +48,12 @@ module.exports = function(grunt) {
     pages: {
       options: {
         pageSrc: 'src/views/pages',
+        rss: {
+          author: 'Shaun Church',
+          title: 'Shaun Church\'s Boilerplate',
+          description: 'A front-end starting point.',
+          url: 'http://www.shaunchurch.com'
+        }
         // pagination: {
           // listPage: 'src/views/pages/blog.jade',
           // postsPerPage: 3
