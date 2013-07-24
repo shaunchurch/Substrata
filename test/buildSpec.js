@@ -12,8 +12,8 @@ describe("HTML Build Tests", function() {
   });
 
   it('should generate posts in the dist/post directory', function() {
-    fs.existsSync('dist/post/And-now-for-something-completely-different.html').should.be.ok;
-    fs.existsSync('dist/post/This-is-the-first-post.html').should.be.ok;    
+    fs.existsSync('dist/post/and-now-for-something-completely-different.html').should.be.ok;
+    fs.existsSync('dist/post/this-is-the-first-post.html').should.be.ok;    
   });
 
   it('should generate pages in the root dist/ directory', function() {
