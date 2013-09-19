@@ -7,7 +7,7 @@ block content
     each post in posts
       div.post
         h2
-          a(href = "/#{post.url}") #{post.title}
+          a(href = "/#{post.url}", data-quicklook="true") #{post.title}
         mixin postdate(post.date)
         !{post.content}
   aside.sidebar

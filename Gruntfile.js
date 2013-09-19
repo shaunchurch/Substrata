@@ -2,16 +2,28 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-      },
-      build: {
-        files: {
-          'dist/js/main.min.js': ['components/zepto/zepto.min.js','src/js/main.js']
-        }
-      }
-    },
+    // uglify: {
+    //   options: {
+    //     banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+    //   },
+    //   build: {
+    //     files: {
+    //       'dist/js/main.min.js': ['components/zepto/zepto.min.js','src/js/main.js']
+    //     }
+    //   }
+    // },
+
+    // requirejs: {
+    //   compile: {
+    //     options: {
+    //       name: 'main',
+    //       baseUrl: "src/js",
+    //       mainConfigFile: "src/js/require.config.js",
+    //       out: "dist/js/main.min.js"
+    //     }
+    //   }
+    // },
+
     jshint: {
       files: ['Gruntfile.js', 'src/js/*.js'],
       options: {
@@ -78,7 +90,11 @@ module.exports = function(grunt) {
         files: [
           {expand: true, cwd: 'src', src: ['.htaccess', 'remotedeploy.php'], dest: 'dist/' },
           {expand: true, cwd: 'src/images', src: ['*.*'], dest: 'dist/images/'},
-          {expand: true, cwd: 'src/lib', src: ['HipChat.php'], dest: 'dist/lib/'}
+          {expand: true, cwd: 'src/lib', src: ['HipChat.php'], dest: 'dist/lib/'},
+          {expand: true, cwd: 'bower_components/requirejs', src: ['require.js'], dest: 'dist/js/'},
+          // {expand: true, cwd: 'src/js', src: ['require.config.js'], dest: 'dist/js' }
+          {expand: true, cwd: 'src/js', src: ['**/**/*.js'], dest: 'dist/js/' },
+          {expand: true, cwd: 'bower_components', src: ['**/**/*.js'], dest: 'dist/js/bower_components/' }
         ]
       }
     },
@@ -105,12 +121,12 @@ module.exports = function(grunt) {
         livereload: true
       },
       css: {
-        files: ['src/css/less/*.less', 'src/css/main.less'],
+        files: ['src/css/less/*.less', 'src/css/modules/*.less', 'src/css/main.less'],
         tasks: ['less']
       },
       js: {
         files: ['src/js/**/*.js', 'src/js/*.js', 'test/*.js'],
-        tasks: ['uglify', 'qtest']
+        tasks: ['copy']
       },
       jade: {
          files: ['src/**/**/*.jade', 'src/**/*.jade', 'src/*.jade'],
@@ -147,7 +163,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default', ['server']);
-  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
+  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'copy' ]);
   grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
   grunt.registerTask('qtest', ['simplemocha', 'mocha']);
   grunt.registerTask('test', ['build', 'qtest']);

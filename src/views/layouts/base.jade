@@ -20,9 +20,9 @@ html
           li
             a(href="/", class=(currentPage === 'index' ? 'current' : '')) Home
           li
-            a(href="/blog.html", class=(currentPage === 'blog' || currentPage === 'post' ? 'current' : '')) Blog
+            a(href="/blog.html", data-quicklook="true", class=(currentPage === 'blog' || currentPage === 'post' ? 'current' : '')) Blog
           li
-            a(href="/about.html", class=(currentPage === 'about' ? 'current' : '')) About
+            a(href="/about.html", data-quicklook="true", class=(currentPage === 'about' ? 'current' : '')) About
 
     block content
     block footer
@@ -35,6 +35,13 @@ html
             |Last built: 
             mixin builddate()
 
-    script(src='/js/main.min.js',type="text/javascript")
-    include ../partials/snippets.html
-    include ../partials/upgrade-browser.html
+    // script(src='/js/main.min.js',type="text/javascript")
+    
+    script(data-main='/js/main', src='/js/require.js')
+    script(src='/js/require.config.js')
+    // script(src='js/require.js')
+    // script(src='js/main.min.js')
+    
+
+    // include ../partials/snippets.html
+    // include ../partials/upgrade-browser.html

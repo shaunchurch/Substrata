@@ -12,20 +12,20 @@
     <nav id="primary">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/blog.html" class="current">Blog</a></li>
-        <li><a href="/about.html">About</a></li>
+        <li><a href="/blog.html" data-quicklook="true" class="current">Blog</a></li>
+        <li><a href="/about.html" data-quicklook="true">About</a></li>
       </ul>
     </nav>
     <section class="content">
       <div class="post">
-        <h2><a href="/post/first-real-post.html">First real post</a></h2>
+        <h2><a href="/post/first-real-post.html" data-quicklook="true">First real post</a></h2>
         <h4 class="post-date">Sun Jun 23 2013</h4>
         <!-- h4.post-date= [date.getUTCFullYear(), date.getMonth() + 1, date.getDate()].join(' - ')--><p>Lorem ipsum dolar sit amet. </p>
 <p>This is a new post.</p>
 
       </div>
       <div class="post">
-        <h2><a href="/post/this-is-the-first-post.html">This is the first post</a></h2>
+        <h2><a href="/post/this-is-the-first-post.html" data-quicklook="true">This is the first post</a></h2>
         <h4 class="post-date">Mon Oct 04 2010</h4>
         <!-- h4.post-date= [date.getUTCFullYear(), date.getMonth() + 1, date.getDate()].join(' - ')--><p>Jujubes pie chocolate cheesecake. Chupa chups faworki pie donut croissant jujubes powder jujubes oat cake. Dragée icing jelly chocolate cake powder. Faworki wafer donut halvah. Soufflé jelly chupa chups oat cake pudding apple pie gummi bears jelly beans. Faworki dessert fruitcake pastry. Tiramisu soufflé apple pie.</p>
 <a name="chuppa-chupps" class="anchor" href="#chuppa-chupps"><h4>Chuppa Chupps</h4>
@@ -38,7 +38,7 @@
 
       </div>
       <div class="post">
-        <h2><a href="/post/this-is-the-second-post.html">This is the second post</a></h2>
+        <h2><a href="/post/this-is-the-second-post.html" data-quicklook="true">This is the second post</a></h2>
         <h4 class="post-date">Mon Oct 04 2010</h4>
         <!-- h4.post-date= [date.getUTCFullYear(), date.getMonth() + 1, date.getDate()].join(' - ')--><p>Jujubes pie chocolate cheesecake. Chupa chups faworki pie donut croissant jujubes powder jujubes oat cake. Dragée icing jelly chocolate cake powder. Faworki wafer donut halvah. Soufflé jelly chupa chups oat cake pudding apple pie gummi bears jelly beans. Faworki dessert fruitcake pastry. Tiramisu soufflé apple pie.</p>
 <p>Jelly beans cheesecake sweet. Muffin soufflé croissant jelly beans tiramisu oat cake. Brownie gummi bears sugar plum pastry chocolate cake cupcake danish. Cotton candy gummies applicake jujubes. Cotton candy pie jujubes toffee candy canes. Wypas bear claw faworki liquorice. Candy sweet roll chocolate bar wypas.</p>
@@ -51,7 +51,7 @@
 
       </div>
       <div class="post">
-        <h2><a href="/post/and-now-for-something-completely-different.html">And now for something completely different</a></h2>
+        <h2><a href="/post/and-now-for-something-completely-different.html" data-quicklook="true">And now for something completely different</a></h2>
         <h4 class="post-date">Mon Oct 04 2010</h4>
         <!-- h4.post-date= [date.getUTCFullYear(), date.getMonth() + 1, date.getDate()].join(' - ')--><p>Now this is a post all about how my life got flipped turned upside down. I&#39;d like to take a minute -- just sit right there -- I&#39;ll tell you how I became the Prince of a town called Bel Air.</p>
 <p>In West Philadelphia, born and raised, on a playground is where I spent most of my days. Chillin&#39; out maxin&#39; relaxin&#39; all cool and all shootin&#39; some B Ball outside of the school when a couple of guys who were up to no good started making trouble in my neighbourhood. I got in one little fight and my Mom got scared, she said, &quot;You&#39;re moving with your Auntie and Uncle in Bel Air.&quot;</p>
@@ -91,36 +91,14 @@
     </aside>
     <footer>
       <p><small>Cobbled together by <a href="http://shaunchurch.com">@shaunchurch</a>. Code borrowed from Twitter Bootstrap, HTML5 Boilerplate, Semantic Grid System.
-          Last built: <span>2013/7/24</span></small></p>
+          Last built: <span>2013/9/16</span></small></p>
     </footer>
-    <script src="/js/main.min.js" type="text/javascript"></script>		<!-- Google Web Fonts -->
-        <script type="text/javascript">
-              WebFontConfig = {
-                google: { families: [ 'Open+Sans:400,700:latin' ] }
-              };
-              (function() {
-                var wf = document.createElement('script');
-                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript';
-                wf.async = 'true';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(wf, s);})(); 
-        </script>
-
-        <!-- Google Analytics -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-
-        <script>
-            var substrata = new Substrata();
-            substrata.init();
-        </script>		<!--[if lt IE 9]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+    <!-- script(src='/js/main.min.js',type="text/javascript")-->
+    <script data-main="/js/main" src="/js/require.js"></script>
+    <script src="/js/require.config.js"></script>
+    <!-- script(src='js/require.js')-->
+    <!-- script(src='js/main.min.js')-->
+    <!-- include ../partials/snippets.html-->
+    <!-- include ../partials/upgrade-browser.html-->
   </body>
 </html>

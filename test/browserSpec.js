@@ -3,7 +3,7 @@ describe("Dom Tests", function() {
     var substrata = {};
 
     beforeEach(function(){
-        substrata = new Substrata();
+        // substrata = new Substrata();
     });
 
     it("has a function called testRun which returns true", function() {

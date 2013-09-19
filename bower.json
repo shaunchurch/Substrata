@@ -2,9 +2,9 @@
   "name": "Substrata",
   "version": "0.0.1",
   "dependencies": {
-    "zepto": "latest"
+    "zepto": "latest",
+    "requirejs": "~2.1.8",
+    "jquery": "~2.0.3"
   },
-  "devDependencies": {
-    
-  }
+  "devDependencies": {}
 }
