@@ -1,8 +1,8 @@
-----
-title:   And now for something completely different
-date:    2010-10-4
-author:  Test Editor
-----
+{
+title:   "And now for something completely different",
+date:    "2010-10-4",
+author:  "Test Editor"
+}
 
 
 Now this is a post all about how my life got flipped turned upside down. I'd like to take a minute -- just sit right there -- I'll tell you how I became the Prince of a town called Bel Air.

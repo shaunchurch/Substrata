@@ -147,7 +147,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default', ['server']);
-  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'coffee:build', 'pages', 'uglify:build', 'copy' ]);
+  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'pages', 'uglify:build', 'copy' ]);
   grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
   grunt.registerTask('qtest', ['simplemocha', 'mocha']);
   grunt.registerTask('test', ['build', 'qtest']);

@@ -1,8 +1,8 @@
-----
-title:   This is the first post
-date:    2010-10-4
-author:  Test Editor
-----
+{
+title:   "This is the first post",
+date:    "2010-10-4",
+author:  "Test Editor"
+}
 
 
 Jujubes pie chocolate cheesecake. Chupa chups faworki pie donut croissant jujubes powder jujubes oat cake. Dragée icing jelly chocolate cake powder. Faworki wafer donut halvah. Soufflé jelly chupa chups oat cake pudding apple pie gummi bears jelly beans. Faworki dessert fruitcake pastry. Tiramisu soufflé apple pie.

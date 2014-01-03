@@ -5,6 +5,7 @@ function Substrata() {
         // resize event
         $(window).resize(function() {
                 self.setupWindow();
+                console.log("let's see if this thing works at all')");
         });
     };
 
