@@ -5,9 +5,12 @@ A lightweight, minimalist, responsive, semantic grid powered, unstyled, front-en
 
 ## What is it?
 
-An attempt to create a bare-bones frontend foundation upon which new projects can quickly and easily be built, to remove the barrier of setup from building quick simple websites.
+Another front-end bare-bones blank-canvas boilerplate.
 
-I want to:
+## What is it for?
+When you think, "I just need to build a quick, simple website."
+
+## How to use it
 
 	$ git clone https://github.com/shaunchurch/Substrata.git my-new-project
 	$ cd my-new-project
@@ -15,20 +18,10 @@ I want to:
 	$ bower install
 	$ grunt server
 
-... and begin what's unique to this project.
+…then craft your mark-up, compose your content, or code your design.
 
+## Ok, but what does it include?
 
-## What's included?
+Don't reinvent the wheel. Code is included from or inspired by HTML5 Boilerplate, Semantic Grid, LESS Hat, and others, then we bundle a set of carefully chosen defaults. There's a Gruntfile with some essential tasks to handle file watching and live reload, compilation and minification of Less & CSS, Javascript, Markdown, plus quick static site/blog generation using Jade templates with layouts and partials support, powered by grunt-pages.
 
-It's inspired heavily by and borrows code from Twitter Bootstrap, HTML5 Boilerplate and Semantic Grid System amongst others. It then bundles a Gruntfile with some useful tasks to handle livereload, compilation of Jade (layouts and partials), Less, CoffeeScript and Markdown, and supports quick static site generation.
-
-It's everything I need to make a quick new site with a ready made workflow.
-
-## What's not?
-Pre-defined styles, beyond very basic defaults.
-
-## What's next?
-
-- RSS /feed.xml
-- Add carefully selected base styles
-- Parsley for in built form validation?
+It's almost everything you need to begin working efficiently on the unique parts of a project right away, without needing to spend time downloading frameworks, copying boilerplate code or configuring time-saving build processes.
