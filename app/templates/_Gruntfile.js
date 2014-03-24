@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        banner: '<%= gruntUglifyBanner %>\n'
       },
       build: {
         files: {
@@ -149,7 +149,4 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['server']);
   grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'pages', 'uglify:build', 'copy' ]);
   grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
-  grunt.registerTask('qtest', ['simplemocha', 'mocha']);
-  grunt.registerTask('test', ['build', 'qtest']);
-  // grunt.registerTask('watch', ['server']);
 };
