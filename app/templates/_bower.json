@@ -1,5 +1,5 @@
 {
-  "name": "Substrata",
+  "name": "<%= _.slugify(projectName) %>",
   "version": "0.0.1",
   "dependencies": {
     "zepto": "latest"

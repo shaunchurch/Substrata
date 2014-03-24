@@ -12,15 +12,13 @@ html
     link(rel='stylesheet', href='/css/main.min.css')
 
     block title
-      title= "Substrata"
+      title= "<%= _.capitalize(projectName) %>"
   body(class=currentPage)
     block header
       nav#primary
         ul
           li
             a(href="/", class=(currentPage === 'index' ? 'current' : '')) Home
-          li
-            a(href="/blog.html", class=(currentPage === 'blog' || currentPage === 'post' ? 'current' : '')) Blog
           li
             a(href="/about.html", class=(currentPage === 'about' ? 'current' : '')) About
 
