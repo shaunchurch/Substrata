@@ -66,10 +66,26 @@ module.exports = function(grunt) {
           url: 'post/:title'
       }
     },
+    nunjucks: {
+      options: {
+        paths: 'src/views'
+      },
+      render: {
+        files: [
+          {
+            expand: true,
+            cwd: "src/views/pages",
+            src: "*.html",
+            dest: "dist/",
+            ext: ".html"
+          }
+        ]
+      }
+    },
     clean: {
         dev: ['dev'],
         build: ['dist'],
-        pages: ['dist/*.html'],
+        pages: ['dist/**/*.html'],
         posts: ['dist/posts/*.html'],
         images: ['dist/images']
     },
@@ -120,9 +136,9 @@ module.exports = function(grunt) {
         files: ['src/**/*.coffee', 'src/*.coffee'],
         tasks: ['coffee:compile']
       },
-      pages: {
-        files: ['src/views/pages/*.html', 'src/pages/*.ejs', 'src/pages/*.eco'],
-        tasks: ['pages']
+      nunjucks: {
+        files: ['src/views/pages/*.html', 'src/views/layouts/*.html', 'src/views/partials/*.html'],
+        tasks: ['nunjucks']
       },
       posts: {
         files: ['src/views/**/*.md', 'src/views/posts/*.mdown', 'src/posts/*.markdown'],
@@ -147,7 +163,7 @@ module.exports = function(grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default', ['server']);
-  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'pages', 'uglify:build', 'copy' ]);
+  grunt.registerTask('build', ['clean:build', 'jshint', 'less:build', 'nunjucks', 'uglify:build', 'copy' ]);
   grunt.registerTask('server', ['build', 'connect', 'open', 'watch' ]);
   grunt.registerTask('qtest', ['simplemocha', 'mocha']);
   grunt.registerTask('test', ['build', 'qtest']);

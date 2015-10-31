@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <title>{% block title %}This is our Blog{% endblock %}</title>
+  </head>
+
+  <body>
+    {% block nav %}
+      {% include '../partials/nav.html' %}
+    {% endblock%}
+    {% block main %}
+      Using base.html layout
+    {% endblock %}
+    {% block footer %}
+      <footer>
+        Gooter
+      </footer>
+    {% endblock %}
+
+    {% include '../partials/snippets.html' %}
+  </body>
+</html>
